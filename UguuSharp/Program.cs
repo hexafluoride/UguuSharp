@@ -95,6 +95,8 @@ namespace UguuSharp
                     return;
                 }
 
+                ms.Seek(0, SeekOrigin.Begin);
+
                 if (string.IsNullOrWhiteSpace(name))
                     uploader.UploadFile(ms).Wait();
                 else
