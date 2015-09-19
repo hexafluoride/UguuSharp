@@ -52,6 +52,8 @@ namespace UguuSharp
             using (var client = HttpClientFactory.Create(handler))
             using (var formData = new MultipartFormDataContent())
             {
+                client.Timeout = TimeSpan.MaxValue;
+
                 formData.Add(fileStreamContent, "file", filename);
 
                 handler.HttpSendProgress += (s, e) =>
