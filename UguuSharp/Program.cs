@@ -98,16 +98,16 @@ namespace UguuSharp
                 ms.Seek(0, SeekOrigin.Begin);
 
                 if (string.IsNullOrWhiteSpace(name))
-                    uploader.UploadFile(ms).Wait();
+                    uploader.UploadFile(ms).Wait(-1);
                 else
-                    uploader.UploadFile(ms, name).Wait();
+                    uploader.UploadFile(ms, name).Wait(-1);
             }
             else
             {
                 if (string.IsNullOrWhiteSpace(name))
-                    uploader.UploadFile(filename).Wait();
+                    uploader.UploadFile(filename).Wait(-1);
                 else
-                    uploader.UploadFile(filename, name).Wait();
+                    uploader.UploadFile(filename, name).Wait(-1);
             }
         }
 
