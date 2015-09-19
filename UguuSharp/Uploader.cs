@@ -52,7 +52,7 @@ namespace UguuSharp
             using (var client = HttpClientFactory.Create(handler))
             using (var formData = new MultipartFormDataContent())
             {
-                client.Timeout = TimeSpan.MaxValue;
+                client.Timeout = new TimeSpan(1, 0, 0); // 1 hour should be enough probably
 
                 formData.Add(fileStreamContent, "file", filename);
 
