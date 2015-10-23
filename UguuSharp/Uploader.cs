@@ -32,7 +32,7 @@ namespace UguuSharp
             return Task.Factory.StartNew(delegate
             {
                 string url = "";
-                var stream = Upload("http://uguu.se/api.php?d=upload", name, input);
+                var stream = Upload("http://uguu.se/api.php?d=upload-tool", name, input);
 
                 StreamReader sr = new StreamReader(stream);
                 url = sr.ReadToEnd();
